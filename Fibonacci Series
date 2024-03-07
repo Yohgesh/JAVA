@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the limit for Fibonacci series: ");
+        int limit = scanner.nextInt();
+        scanner.close();
+        
+        System.out.print("Fibonacci series up to " + limit + ": ");
+        generateFibonacciSeries(limit);
+    }
+    
+    public static void generateFibonacciSeries(int limit) {
+        int a = 0, b = 1;
+        System.out.print(a + ", " + b);
+        int nextTerm = a + b;
+        while (nextTerm <= limit) {
+            System.out.print(", " + nextTerm);
+            a = b;
+            b = nextTerm;
+            nextTerm = a + b;
+        }
+        System.out.println();
+    }
+}
