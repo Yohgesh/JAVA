@@ -1,0 +1,69 @@
+class Shape {
+    public double calculatePerimeter() {
+        return 0.0;
+    }
+    
+    public void printShapeType(String shapeType) {
+        System.out.println("This is a " + shapeType);
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Square extends Shape {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 4 * side;
+    }
+}
+
+class Triangle extends Shape {
+    private double side1;
+    private double side2;
+    private double side3;
+
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+public class GeometricShapes {
+    public static void main(String[] args) {
+        Circle circle = new Circle(1);
+        Square square = new Square(2);
+        Triangle triangle = new Triangle(1, 2, 3);
+
+        circle.printShapeType("Circle");
+        System.out.println("Perimeter of Circle: " + circle.calculatePerimeter());
+        
+        square.printShapeType("Square");
+        System.out.println("Perimeter of Square: " + square.calculatePerimeter());
+        
+        triangle.printShapeType("Triangle");
+        System.out.println("Perimeter of Triangle: " + triangle.calculatePerimeter());
+    }
+}
