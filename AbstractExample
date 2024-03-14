@@ -1,0 +1,39 @@
+abstract class Addition{
+	
+	abstract void add();
+	
+	public void sub() {
+		System.out.println("Subtraction");
+	}
+}
+
+abstract class ImplementedMethod extends Addition {
+	abstract void division();
+	public void multiply() {
+		System.out.println("Multiplication");
+	}
+}	
+
+class ConcreteClass extends ImplementedMethod {
+	
+	@Override
+	void add() {
+		System.out.println("Addition");
+	}
+
+	@Override
+	void division() {
+		System.out.println("Division");
+	}
+}
+
+public class Abstract {
+
+	public static void main(String[] args) {
+		ConcreteClass obj = new ConcreteClass();
+		obj.add();
+		obj.sub();
+		obj.multiply();
+		obj.division();
+	}
+}
