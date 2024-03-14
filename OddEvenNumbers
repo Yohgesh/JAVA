@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+//using arrays
+public class OddEvenNumbers {
+    public static void printOddEvenNumbers(int start, int end) {
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
+
+        for (int num = start; num <= end; num++) {
+            if (num % 2 == 0) {
+                evenNumbers.add(num);
+            } else {
+                oddNumbers.add(num);
+            }
+        }
+
+        System.out.println("Odd numbers: " + oddNumbers);
+        System.out.println("Even numbers: " + evenNumbers);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the starting number of the range: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the ending number of the range: ");
+        int end = scanner.nextInt();
+
+        printOddEvenNumbers(start, end);
+
+        scanner.close();
+    }
+}
+
